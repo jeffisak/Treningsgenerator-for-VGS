@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proporsjonale Størrelser - Oppgavegenerator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Proporsjonale Størrelser</h1>
+            <p class="subtitle">Treningsgenerator for VGS</p>
+        </header>
+
+        <div class="card controls">
+            <div class="level-selector">
+                <label for="level">Velg Nivå:</label>
+                <select id="level" name="level">
+                    <option value="1">Nivå 1: Grunnleggende</option>
+                    <option value="2">Nivå 2: Middels</option>
+                    <option value="3">Nivå 3: Avansert</option>
+                </select>
+            </div>
+            <button id="generate-btn" class="btn btn-primary">Ny Oppgave</button>
+        </div>
+
+        <div class="card problem-card" id="problem-area" style="display: none;">
+            <span class="badge" id="level-badge">Nivå 1</span>
+
+            <div class="chart-container"
+                style="position: relative; height:30vh; width:100%; display:none; margin-bottom: 20px;">
+                <canvas id="problem-chart"></canvas>
+            </div>
+
+            <div id="problem-text" class="problem-content">
+                <!-- Oppgavetekst kommer her -->
+            </div>
+
+
+            <div class="actions">
+                <button id="toggle-solution-btn" class="btn btn-secondary">Vis Løsning</button>
+            </div>
+
+            <div id="solution-area" class="solution-content hidden">
+                <div class="solution-inner" id="solution-text">
+                    <!-- Løsning kommer her -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
